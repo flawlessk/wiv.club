@@ -1,2 +1,0 @@
-- UX improvements.
-- Bug fixes.
