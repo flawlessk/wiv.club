@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.wivapp",
+                 "sha256_cert_fingerprints": ["FE:6B:D3:23:D8:AC:B4:56:12:0A:EB:58:57:BF:9B:3E:F1:63:55:D6:9F:6C:CA:10:E7:25:A0:E7:D8:88:79:B0", "39:0E:F0:CD:18:02:3D:AB:D8:83:03:60:4C:2A:31:94:6B:9C:FC:0B:95:87:57:8B:EA:C6:7B:D5:69:1B:AD:DB"] }
+  }]

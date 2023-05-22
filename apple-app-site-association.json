@@ -1,0 +1,18 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "9NGXYXAP4V.org.movieApp",
+                "paths": [ 
+                    "/marketplace/categories/*",
+                    "/knowledgebase/documents/*",
+                    "/knowledgebase/document/*",
+                    "/event/*",
+                    "/survey/*",
+                    "/post/*"
+                ]
+            }
+        ]
+    }
+}

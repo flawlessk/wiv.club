@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">207991791492-ev4ruak1n3ncres35cjs2mid20osaso6.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">207991791492</string>
+    <string name="google_api_key" translatable="false">AIzaSyCaAN_NG3rjIndzItTUAo2Mv27qK_KYcKo</string>
+    <string name="google_app_id" translatable="false">1:207991791492:android:6c30133318319b3f5c07d1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCaAN_NG3rjIndzItTUAo2Mv27qK_KYcKo</string>
+    <string name="google_storage_bucket" translatable="false">wiv-app.appspot.com</string>
+    <string name="project_id" translatable="false">wiv-app</string>
+</resources>

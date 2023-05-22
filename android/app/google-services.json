@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207991791492",
+    "project_id": "wiv-app",
+    "storage_bucket": "wiv-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207991791492:android:6c30133318319b3f5c07d1",
+        "android_client_info": {
+          "package_name": "com.wivapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207991791492-ev4ruak1n3ncres35cjs2mid20osaso6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaAN_NG3rjIndzItTUAo2Mv27qK_KYcKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207991791492-ev4ruak1n3ncres35cjs2mid20osaso6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
