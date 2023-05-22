@@ -1,0 +1,84 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+fastlane_version "2.28.3"
+
+default_platform :android
+
+platform :android do
+
+    desc "Submit a new Build Build to Play Store internal track"
+    lane :submit_to_playStore_internal do
+      build_aab()
+      supply(
+        track: "internal", 
+        aab: ENV["RELEASE_AAB_PATH"], 
+        skip_upload_metadata:true,
+        skip_upload_screenshots:true, 
+        skip_upload_images:true,
+        skip_upload_apk:true,
+        skip_upload_aab:false
+        ) # Upload the AAB to the Play Store
+      send_msg_to_slack(message: "Play Store - internal track")
+    end
+
+    desc "Submit a new Build Build to Play Store production"
+    lane :submit_to_playStore do
+      build_aab()
+      supply(
+        track: "production", 
+        aab: ENV["RELEASE_AAB_PATH"], 
+        skip_upload_metadata:false,
+        skip_upload_screenshots:false, 
+        skip_upload_images:false,
+        skip_upload_apk:true,
+        skip_upload_aab:false
+        ) # Upload the APK to the Play Store
+      send_msg_to_slack(message: "Play Store - production")
+    end
+
+    desc "Build apk"
+    lane :build_apk do
+      gradle(task: "clean");
+      gradle(
+        task: "app:assemble",
+        build_type: "Release",
+        print_command: false,
+        print_command_output: true
+      )
+    end
+
+    def build_aab
+      gradle(task: "clean");
+      increment_version_code(gradle_file_path: ENV["BUILD_GRADLE_PATH"])
+      gradle(
+        task: "app:bundle",
+        build_type: "Release",
+        print_command: false,
+        print_command_output: true
+      )
+    end
+
+    private_lane :send_msg_to_slack do |options|
+      slack(
+          slack_url:  ENV['SLACK_URL'],
+          channel: ENV['SLACK_CHANNEL'],
+          message: options[:message],
+          payload: { 
+              ":iphone: App Id" => ENV['APPLICATION_ID',]
+          },
+          default_payloads: [:git_branch],
+      )
+    end
+
+
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used
+# No personal data is sent or shared. Learn more at https://github.com/fastlane/enhancer
